@@ -11,9 +11,9 @@ namespace EyeBehavior {
 
 class EyeStatus {
   Vector2 eye_pos;
-  float upper_eyelid_pos;
-  float lower_eyelid_pos;
-  float pupilSize = 1;
+  float upper_eyelid_value;
+  float lower_eyelid_value;
+  float pupil_size_factor = 1;
 };
 
 } // namespace EyeBehavior
