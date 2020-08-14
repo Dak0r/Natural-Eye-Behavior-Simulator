@@ -46,5 +46,6 @@
     float slerp(float a, float b, float t);
     Vector2 lerp(Vector2 a, Vector2 b, float t);
     float random(float min, float max);
+    float random(Range range);
     int randomInt(int min, int max);
  #endif

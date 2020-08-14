@@ -60,6 +60,9 @@ double deg2rad (double degrees) {
  float random(float min, float max){
      return min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(max-min)));
  }
+  float random(Range range){
+     return range.min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(range.max-range.min)));
+ }
  int randomInt(int min, int max){
     /*unsigned int r;
     do {
