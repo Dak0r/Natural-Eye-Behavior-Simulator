@@ -10,10 +10,13 @@
 namespace EyeBehavior {
 
 class EyeStatus {
+  public:
   Vector2 eye_pos;
-  float upper_eyelid_value;
-  float lower_eyelid_value;
+  float eye_roll = 0;
+  float upper_eyelid_value = 0;
+  float lower_eyelid_value = 0;
   float pupil_size_factor = 1;
+  
 };
 
 } // namespace EyeBehavior

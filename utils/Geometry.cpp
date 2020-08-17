@@ -41,6 +41,9 @@ double deg2rad (double degrees) {
     return sqt / (2.0f * (sqt - t) + 1.0f);
 }
 
+ float lerp(Range range, float t){
+     return range.min+(range.max-range.min)*t;
+ }
  float lerp(float a, float b, float t){
      return a+(b-a)*t;
  }

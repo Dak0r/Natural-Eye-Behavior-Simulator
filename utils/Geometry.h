@@ -42,6 +42,7 @@
     float scaleOffsetToSize(float original, float used, float value);
     Vector2 rotate2d(Vector2 point,  float angle);
     float parametricBlend(float t);
+    float lerp(Range range, float t);
     float lerp(float a, float b, float t);
     float slerp(float a, float b, float t);
     Vector2 lerp(Vector2 a, Vector2 b, float t);

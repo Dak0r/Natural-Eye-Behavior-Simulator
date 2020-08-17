@@ -22,8 +22,8 @@ public:
 private:
   EyeConfig *current_eye_config_;
 
-  EyeStatus *current_values_;
-  EyeStatus *target_values_;
+  EyeStatus current_values_;
+  EyeStatus target_values_;
 
   ulong blink_time_last_ = 0.0;
   ulong blink_time_next_ = 1.0;
@@ -33,8 +33,12 @@ private:
   ulong current_blink_time_start_ = 0;
   float current_blink_progress_ = 0;
 
+  unsigned long time_last_random_pos = 0;
+  float time_next_random_pos = 0;
+
   ulong now;
 
+  void handle_position();
   void handle_blink();
 };
 } // namespace EyeBehavior
