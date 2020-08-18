@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void debug(std::string message, ulong time)
+void debug(std::string message, unsigned long time)
 {
     //std::cout << time << " " << message << std::endl;
 }

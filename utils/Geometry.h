@@ -3,7 +3,7 @@
 
 
 
-    #define PI 3.14159265
+    #define GEO_PI 3.14159265
     
     struct Vector2
     {

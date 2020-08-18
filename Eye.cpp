@@ -12,7 +12,7 @@ EyeBehavior::Eye::Eye(EyeConfig *usedEyeConfig){
 
 }
 
-void EyeBehavior::Eye::update(ulong timeInMs){
+void EyeBehavior::Eye::update(unsigned long timeInMs){
     now = timeInMs;
 
     handle_position();
