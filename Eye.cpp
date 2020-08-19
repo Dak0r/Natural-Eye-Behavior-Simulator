@@ -1,7 +1,6 @@
 #include "Eye.h"
 
-#include "Geometry.h"
-#include "Debug.h"
+#include "utils/Debug.h"
 
 EyeBehavior::Eye::Eye(EyeConfig *usedEyeConfig){
     current_eye_config_ = usedEyeConfig;

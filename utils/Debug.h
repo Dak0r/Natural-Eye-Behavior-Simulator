@@ -1,8 +1,6 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#include <string>
-
-void debug(std::string message);
+void debug(char* message, unsigned long time = 0);
 
 #endif
