@@ -5,7 +5,7 @@
 #ifndef EYE_STATUS_H
 #define EYE_STATUS_H
 
-#include "utils/Geometry.h"
+#include "EyeMathUtils.h"
 
 namespace EyeBehavior {
 
@@ -15,7 +15,7 @@ class EyeStatus {
   float eye_roll = 0;
   float upper_eyelid_value = 0;
   float lower_eyelid_value = 0;
-  float pupil_size_factor = 1;
+  float pupil_size_factor = 0.9;
   
 };
 

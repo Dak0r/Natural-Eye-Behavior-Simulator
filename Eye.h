@@ -2,8 +2,6 @@
 #define EYE_H
 
 //#include <iostream>
-#include <math.h>
-
 #include "EyeConfig.h"
 #include "EyeStatus.h"
 
@@ -18,6 +16,11 @@ public:
 
   float get_position_x();
   float get_position_y();
+
+  float get_upper_eyelid();
+  float get_lower_eyelid();
+
+  float get_pupil_size();
 
 private:
   EyeConfig *current_eye_config_;

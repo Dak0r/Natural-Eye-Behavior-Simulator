@@ -1,6 +1,7 @@
-#include "Geometry.h"
+#include "EyeMathUtils.h"
 
-#include <cstdlib>
+//#include <cstdlib>
+#include <Arduino.h>
     #define _USE_MATH_DEFINES
     #include <math.h> 
 
@@ -22,7 +23,7 @@ bool operator!=(const Vector2& lhs, const Vector2& rhs)
 }*/
 
 double deg2rad (double degrees) {
-    return ( degrees * PI ) / 180 ;
+    return ( degrees * GEO_PI ) / 180 ;
 }
 
  Vector2 rotate2d(Vector2 point,  float angle){
@@ -60,10 +61,10 @@ double deg2rad (double degrees) {
      return lerp(a, b, parametricBlend(t));
  }
 
- float random(float min, float max){
+ float randomFloat(float min, float max){
      return min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(max-min)));
  }
-  float random(Range range){
+  float randomFloat(Range range){
      return range.min + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(range.max-range.min)));
  }
  int randomInt(int min, int max){
