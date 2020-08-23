@@ -2,7 +2,8 @@
 A simple implementation for simulating natural eye movement (no ui just data)
 
 
-Example usage:
+## Example usage:
+
 ```C
   EyeConfig eyeconfig; // default config
   Eye eye(&eyeconfig);
@@ -28,3 +29,5 @@ Example usage:
     renderEye(posX, posY, eyelid_upper_pos, eyelid_lower_pos, pupil_size);
   }
 ```
+
+See my Cyborg Eye Arduino Sketch for an more complete example: https://github.com/Dak0r/Cyborg-1.5-Oled-Eye-Arduino/blob/master/Cyborg-1.5-Oled-Eye.ino
