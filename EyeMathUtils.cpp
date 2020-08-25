@@ -1,9 +1,13 @@
 #include "EyeMathUtils.h"
 
-//#include <cstdlib>
-#include <Arduino.h>
-    #define _USE_MATH_DEFINES
-    #include <math.h> 
+
+#if ARDUINO
+    #include <Arduino.h>
+#else
+    #include <cstdlib>
+#endif
+
+#include <math.h> 
 
 bool operator==(const Vector2& lhs, const Vector2& rhs)
 {
