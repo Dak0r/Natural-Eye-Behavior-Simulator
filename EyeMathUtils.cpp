@@ -7,7 +7,7 @@
     #include <cstdlib>
 #endif
 
-#include <math.h> 
+#include <math.h>
 
 bool operator==(const Vector2& lhs, const Vector2& rhs)
 {
