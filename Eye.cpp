@@ -37,7 +37,7 @@ float EyeBehavior::Eye::get_pupil_size(){
     return current_values_.pupil_size_factor;
 }
 
-void EyeBehavior::Eye::update(unsigned long timeInMs){
+void EyeBehavior::Eye::update(unsigned long timeInMs, float timeScale){
     now = timeInMs;
 
     handle_position();
@@ -45,23 +45,23 @@ void EyeBehavior::Eye::update(unsigned long timeInMs){
 
     if(target_values_.eye_pos != current_values_.eye_pos){
         current_values_.eye_pos = 
-            lerp(current_values_.eye_pos, target_values_.eye_pos, current_eye_config_->eye_movement_speed);
+            lerp(current_values_.eye_pos, target_values_.eye_pos, current_eye_config_->eye_movement_speed * timeScale);
     }
     
     if(target_values_.pupil_size_factor != current_values_.pupil_size_factor){
         current_values_.pupil_size_factor = 
-            lerp(current_values_.pupil_size_factor, target_values_.pupil_size_factor, current_eye_config_->pupil_size_speed);
+            lerp(current_values_.pupil_size_factor, target_values_.pupil_size_factor, current_eye_config_->pupil_size_speed * timeScale);
     }
     if(target_values_.upper_eyelid_value != current_values_.upper_eyelid_value){
         current_values_.upper_eyelid_value = 
-            lerp(current_values_.upper_eyelid_value, target_values_.upper_eyelid_value, current_eye_config_->eyelid_movement_speed);
+            lerp(current_values_.upper_eyelid_value, target_values_.upper_eyelid_value, current_eye_config_->eyelid_movement_speed * timeScale);
     } 
     if(target_values_.lower_eyelid_value != current_values_.lower_eyelid_value){
         current_values_.lower_eyelid_value = 
-            lerp(current_values_.lower_eyelid_value, target_values_.lower_eyelid_value, current_eye_config_->eyelid_movement_speed);
+            lerp(current_values_.lower_eyelid_value, target_values_.lower_eyelid_value, current_eye_config_->eyelid_movement_speed * timeScale);
     }
     if(current_eye_config_->eye_roll_enabled && target_values_.eye_roll != current_values_.eye_roll){
-        current_values_.eye_roll = lerp(current_values_.eye_roll, target_values_.eye_roll, current_eye_config_->eye_roll_speed);
+        current_values_.eye_roll = lerp(current_values_.eye_roll, target_values_.eye_roll, current_eye_config_->eye_roll_speed * timeScale);
     }
 
     
