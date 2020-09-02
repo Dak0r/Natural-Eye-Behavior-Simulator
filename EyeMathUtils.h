@@ -44,6 +44,7 @@
     float parametricBlend(float t);
     float lerp(Range range, float t);
     float lerp(float a, float b, float t);
+    int lerpInt(int a, int b, float t);
     float slerp(float a, float b, float t);
     Vector2 lerp(Vector2 a, Vector2 b, float t);
     float randomFloat(float min, float max);

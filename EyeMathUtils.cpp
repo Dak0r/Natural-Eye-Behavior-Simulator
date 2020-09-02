@@ -52,6 +52,9 @@ double deg2rad (double degrees) {
  float lerp(float a, float b, float t){
      return a+(b-a)*t;
  }
+int lerpInt(int a, int b, float t){
+    return (int)(a+(b-a)*t);
+}
  /*float slerp(float a, float b, float t){
      return  lerp(a, b, parametricBlend(t));
  }*/
