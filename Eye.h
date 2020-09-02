@@ -11,7 +11,7 @@ public:
 
   Eye(EyeConfig *usedEyeConfig);
   
-  void init_pos();
+  void init_pos(unsigned long now);
   void update(unsigned long timeInMs, float timeScale = 1);
 
   float get_position_x();

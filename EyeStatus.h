@@ -13,8 +13,8 @@ class EyeStatus {
   public:
   Vector2 eye_pos;
   float eye_roll = 0;
-  float upper_eyelid_value = 0;
-  float lower_eyelid_value = 0;
+  float upper_eyelid_value = 0.5;
+  float lower_eyelid_value = 0.5;
   float pupil_size_factor = 0.9;
   
 };

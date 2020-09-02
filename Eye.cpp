@@ -12,7 +12,12 @@ EyeBehavior::Eye::Eye(EyeConfig *usedEyeConfig){
 
 }
 
-void EyeBehavior::Eye::init_pos(){
+void EyeBehavior::Eye::init_pos(unsigned long now){
+    current_values_.eye_pos.x = 0.5;
+    current_values_.eye_pos.y = 0.5;
+    target_values_.eye_pos = current_values_.eye_pos;
+    blink_time_last_ = now;
+    blink_time_next_ = 1000; // delay first blink for start up animation
 }
 
 
