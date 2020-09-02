@@ -75,6 +75,7 @@ void EyeBehavior::Eye::handle_position(){
         float rndpos_y = randomFloat(0,2)-1;
         target_values_.eye_pos.x = rndpos_x;
         target_values_.eye_pos.y = rndpos_y;
+        target_values_.pupil_size_factor = randomFloat(current_eye_config_->pupil_size);
         //std::cout << time << " - new Random Pos: " << rndpos_x << " : " << rndpos_y << " Next in: " << time_next_random_pos << std::endl;
         time_next_random_pos = now + randomFloat(current_eye_config_-> eye_focus_time);
     }
