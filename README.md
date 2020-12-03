@@ -1,5 +1,5 @@
-# Eye-Behavior
-A simple implementation for simulating natural eye movement (no ui just data)
+# Natural-Eye-Behavior-Simulator
+A simple implementation for simulating natural eye movement (there's no UI, just data)
 
 
 ## Example usage:
