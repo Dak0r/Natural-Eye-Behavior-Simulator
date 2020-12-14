@@ -5,7 +5,7 @@
 #include "RandomBlinkModifier.h"
 
 string EyeBehavior::RandomBlinkModifier::getName() {
-    return "random_look_modifier";
+    return "random_blink_modifier";
 }
 
 void EyeBehavior::RandomBlinkModifier::init(unsigned long now, float modifier) {
