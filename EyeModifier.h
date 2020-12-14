@@ -7,6 +7,7 @@
 
 #include "EyeStatus.h"
 #include "EyeConfig.h"
+#include "HeadStatus.h"
 #include <string>
 using namespace std;
 
@@ -17,7 +18,7 @@ namespace EyeBehavior {
 
         virtual void init(unsigned long now, float modifier) = 0;
 
-        virtual void update(unsigned long now, EyeConfig* current_eye_config, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) = 0;
+        virtual void update(unsigned long now, EyeConfig* current_eye_config, HeadStatus* headStatus, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) = 0;
 
         void setModifier(float modifier) {
             this->modifier = modifier;

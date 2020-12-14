@@ -13,7 +13,7 @@ void EyeBehavior::RandomLookModifier::init(unsigned long now, float modifier) {
     setModifier(modifier);
 }
 
-void EyeBehavior::RandomLookModifier::update(unsigned long now, EyeConfig* current_eye_config, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) {
+void EyeBehavior::RandomLookModifier::update(unsigned long now, EyeConfig* current_eye_config, HeadStatus* headStatus, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) {
     if(time_next_random_pos < now){
         time_last_random_pos = now;
         if(getModifier() > 0) { // skip actions if they would not be visible anyway

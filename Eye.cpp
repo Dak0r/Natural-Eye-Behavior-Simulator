@@ -12,6 +12,7 @@
 EyeBehavior::Eye::Eye(){
     current_values_ = EyeStatus();
     target_values_ = EyeStatus();
+    head_status_ = HeadStatus();
 }
 
 EyeBehavior::Eye::~Eye(){
@@ -48,23 +49,23 @@ void EyeBehavior::Eye::init_pos(unsigned long now){
 
 
 void EyeBehavior::Eye::init_head_rotation(float pan, float tilt, float roll) {
-    head_mode = HEAD_MODE_ABSOLUTE;
-    head_rotation_reference[0] = pan;
-    head_rotation_reference[1] = tilt;
-    head_rotation_reference[2] = roll;
+    head_status_.head_mode = HeadStatus::HEAD_MODE_ABSOLUTE;
+    head_status_.head_rotation_reference[0] = pan;
+    head_status_.head_rotation_reference[1] = tilt;
+    head_status_.head_rotation_reference[2] = roll;
 }
 void EyeBehavior::Eye::update_head_rotation(float pan, float tilt, float roll) {
-    head_rotation[0] = pan;
-    head_rotation[1] = tilt;
-    head_rotation[2] = roll;
+    head_status_.head_rotation[0] = pan;
+    head_status_.head_rotation[1] = tilt;
+    head_status_.head_rotation[2] = roll;
 }
 void EyeBehavior::Eye::init_head_gyro() {
-    head_mode = HEAD_MODE_GYRO;
+    head_status_.head_mode = HeadStatus::HEAD_MODE_GYRO;
 }
 void EyeBehavior::Eye::update_head_gyro(float pan, float tilt, float roll) {
-    head_gyro[0] = pan;
-    head_gyro[1] = tilt;
-    head_gyro[2] = roll;
+    head_status_.head_gyro[0] = pan;
+    head_status_.head_gyro[1] = tilt;
+    head_status_.head_gyro[2] = roll;
 }
 
 
@@ -126,7 +127,7 @@ void EyeBehavior::Eye::handle_modifiers(){
         modifier != active_modifiers->end() ;
         ++modifier)
     {
-        (*modifier)->update(now, current_eye_config_, &target_values_, &current_values_);
+        (*modifier)->update(now, current_eye_config_, &head_status_, &target_values_, &current_values_);
     }
 
 }

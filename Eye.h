@@ -5,6 +5,7 @@
 #include <vector>
 #include "EyeConfig.h"
 #include "EyeStatus.h"
+#include "HeadStatus.h"
 #include "EyeModifier.h"
 
 namespace EyeBehavior {
@@ -53,14 +54,12 @@ private:
   EyeStatus current_values_;
   EyeStatus target_values_;
 
+  HeadStatus head_status_;
+
   std::vector<EyeModifier*>* active_modifiers;
 
 
-  enum HeadMode {HEAD_MODE_NONE, HEAD_MODE_ABSOLUTE, HEAD_MODE_GYRO};
-  HeadMode head_mode;
-  float head_rotation[3];
-  float head_rotation_reference[3];
-  float head_gyro[3];
+
 
   float display_degree = 45;
 

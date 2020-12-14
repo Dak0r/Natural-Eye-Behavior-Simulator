@@ -16,7 +16,7 @@ void EyeBehavior::RandomBlinkModifier::init(unsigned long now, float modifier) {
     blink_time_next_ = 1000; // delay first blink for start up animation
 }
 
-void EyeBehavior::RandomBlinkModifier::update(unsigned long now, EyeConfig* eyeConfig, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) {
+void EyeBehavior::RandomBlinkModifier::update(unsigned long now, EyeConfig* eyeConfig, HeadStatus* headStatus, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues) {
     if(getModifier() == 0){ // Blinking for now only supports basic on/off override
         if(c1urrent_blink_state_ != 0 || first_update)
         {

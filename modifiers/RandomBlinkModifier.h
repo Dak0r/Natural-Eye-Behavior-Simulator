@@ -14,7 +14,7 @@ namespace EyeBehavior {
 
         void init(unsigned long now, float modifier);
 
-        void update(unsigned long now, EyeConfig* eyeConfig, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues);
+        void update(unsigned long now, EyeConfig* eyeConfig, HeadStatus* headStatus, EyeStatus* eyeTargetValues, EyeStatus* eyeCurrentValues);
 
 
     private:
