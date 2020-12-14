@@ -6,9 +6,13 @@ A simple implementation for simulating natural eye movement (there's no UI, just
 
 ```C
   EyeConfig eyeconfig; // default config
-  Eye eye(&eyeconfig);
+  Eye eye();
   
-  eye.init_pos(); // Center Eye and set up initial values
+  unsigned long time_now =  duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+  
+  // Setup eye with default config and set uo inital values.
+  // last parameter causes the eye to generate a default list of eye modifiers (random look and random blink)
+  eye.init(time_now, &eyeconfig, nullptr);  
   
   while(!abort){
     // we need a timestamp in milliseconds, the library works with relative values, so it's not important if it's realtime or time since application start etc.
