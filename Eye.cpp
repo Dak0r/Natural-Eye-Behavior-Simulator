@@ -35,7 +35,7 @@ void EyeBehavior::Eye::update_head_rotation(float pan, float tilt, float roll) {
     head_rotation[1] = tilt;
     head_rotation[2] = roll;
 }
-void EyeBehavior::Eye::init_head_rotation() {
+void EyeBehavior::Eye::init_head_gyro() {
     head_mode = HEAD_MODE_GYRO;
 }
 void EyeBehavior::Eye::update_head_gyro(float pan, float tilt, float roll) {

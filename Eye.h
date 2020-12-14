@@ -26,7 +26,7 @@ public:
 
   // used to enable gyro data usage
   // must be called once, before first call of update_head_gyro
-  void init_head_rotation();
+  void init_head_gyro();
 
   //  used to apply effects by force instead of absolute numbers
   //  should be called before every update
