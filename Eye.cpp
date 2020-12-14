@@ -3,6 +3,9 @@
 #include "utils/Debug.h"
 #include "EyeMathUtils.h"
 
+#include <cstdio>
+
+
 EyeBehavior::Eye::Eye(EyeConfig *usedEyeConfig){
     current_eye_config_ = usedEyeConfig;
     
@@ -18,6 +21,27 @@ void EyeBehavior::Eye::init_pos(unsigned long now){
     target_values_.eye_pos = current_values_.eye_pos;
     blink_time_last_ = now;
     blink_time_next_ = 1000; // delay first blink for start up animation
+}
+
+
+void EyeBehavior::Eye::init_head_rotation(float pan, float tilt, float roll) {
+    head_mode = HEAD_MODE_ABSOLUTE;
+    head_rotation_reference[0] = pan;
+    head_rotation_reference[1] = tilt;
+    head_rotation_reference[2] = roll;
+}
+void EyeBehavior::Eye::update_head_rotation(float pan, float tilt, float roll) {
+    head_rotation[0] = pan;
+    head_rotation[1] = tilt;
+    head_rotation[2] = roll;
+}
+void EyeBehavior::Eye::init_head_rotation() {
+    head_mode = HEAD_MODE_GYRO;
+}
+void EyeBehavior::Eye::update_head_gyro(float pan, float tilt, float roll) {
+    head_gyro[0] = pan;
+    head_gyro[1] = tilt;
+    head_gyro[2] = roll;
 }
 
 
@@ -74,6 +98,7 @@ void EyeBehavior::Eye::update(unsigned long timeInMs, float timeScale){
 }
 
 void EyeBehavior::Eye::handle_position(){
+
     if(time_next_random_pos < now){
         time_last_random_pos = now;
         float rndpos_x = randomFloat(0,2)-1;
